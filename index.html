@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;400&family=Montserrat:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        background-color: royalblue;
+        margin: 10px;
+        padding: 10px;
+      }
+    p {
+      font-family: "Lexend Deca", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: white;
+      background-color: rgb(135, 161, 239);
+      border :2px solid moccasin;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .container {
+         width: 70%;
+      margin: 0 auto;
+    }
+    section{
+        width: 65%;
+        background-color: rgb(135, 161, 239);
+        margin: 20px auto;
+        padding: 13px;
+        border: 2px solid aliceblue;
+        border-radius: 15px;
+    }
+    h1{
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    h2{
+        padding-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      text-align: center;
+      padding-top: 20px;
+    }
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    a{
+        text-decoration: none;
+        color: moccasin;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 7px 10px;
+        border: 1px transparent white;
+        margin: 5px;
+    }
+    a.active,a:hover{
+        border: 1px solid white;
+        transition: .5s;
+        background-color: silver;
+    }
+    button{
+        background-color: rgb(135, 161, 239);
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 10px;
+    }
+    button:hover{
+        background-color: rgba(240, 248, 255, 0.692);
+        transition: .5s;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="top">Basic Geometry</h1>
+      <p>
+        In this section, we are going to find the Area of some two-dimension
+        shapes.
+      </p>
+      <br>
+      <p>You can click on any shape below:</p>
+      <ul>
+        <li><a href="#circle">Circle</a></li>
+        <li><a href="#triangle">Triangle</a></li>
+        <li><a href="#square">Square</a></li>
+        <li><a href="#rectangle">Rectangle</a></li>
+      </ul>
+      <br>
+      <section id="circle">
+        <h2>Circle Area</h2>
+        <div>
+          <label for="radius">Enter the value of the circle's radius:</label>
+          <input type="text" id="radius" />
+        </div>
+        <div>
+          <label for="circle_area">Result:</label>
+          <input type="text" id="circle_area" />
+          <button onclick="AreaOfCircle()">Calculate</button>
+        </div>
+        <br>
+        <div class="go">
+          <a href="#top">Go to top</a>
+        </div>
+      </section>
+      <br>
+      <section id="triangle">
+        <h2>Triangle Area</h2>
+        <div>
+          <label for="base">Enter the value of the triangle's base:</label>
+          <input type="text" id="base" />
+          <br>
+          <label for="height">Enter the value of the triangle's height:</label>
+            <input type="text" id="height" />
+        </div>
+        <div>
+          <label for="triangle_area">Result:</label>
+          <input type="text" id="triangle_area" />
+          <button onclick="AreaOfTriangle()">Calculate</button>
+        </div>
+        <br>
+        <div class="go">
+          <a href="#top">Go to top</a>
+        </div>
+      </section>
+      <br>
+      <section id="square">
+        <h2>Square Area</h2>
+        <div>
+          <label for="side">Enter the value of the square's side:</label>
+          <input type="text" id="side" />
+        </div>
+        <div>
+          <label for="square_area">Result:</label>
+          <input type="text" id="square_area" />
+          <button onclick="AraeOfSquare()">Calculate</button>
+        </div>
+        <br>
+        <div class="go">
+          <a href="#top">Go to top</a>
+        </div>
+      </section>
+      <br>
+      <section id="rectangle">
+        <h2>Rectangle Area</h2>
+        <div>
+          <label for="length">Enter the value of the rectangle's length:</label>
+          <input type="text" id="length" />
+          <br>
+          <label for="width">Enter the value of the rectangle's width:</label>
+          <input type="text" id="width" />
+        </div>
+        <div>
+          <label for="rectangle_area">Result:</label>
+          <input type="text" id="rectangle_area" />
+          <button onclick="AreaOfRectangle()">Calculate</button>
+        </div>
+        <br>
+        <div class="go">
+          <a href="#top">Go to top</a>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script>
+      function AreaOfCircle() {
+        let radius = document.getElementById("radius").value;
+      var result = Math.PI * radius * radius;
+      document.getElementById("circle_area").value = result;
+    }
+    function AreaOfTriangle() {
+      let base = document.getElementById("base").value;
+      let height = document.getElementById("height").value;
+      var result = (base * height) / 2;
+      document.getElementById("triangle_area").value = result;
+    }
+    function AraeOfSquare() {
+      let side = document.getElementById("side").value;
+      var result = side * side;
+      document.getElementById("square_area").value = result;
+    }
+    function AreaOfRectangle() {
+      let length = document.getElementById("length").value;
+      let width = document.getElementById("width").value;
+      var result = length * width;
+      document.getElementById("rectangle_area").value = result;
+    }
+
+  </script>
+</html>
